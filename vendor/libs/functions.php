@@ -1,5 +1,5 @@
 <?php
-function myDebug($var)
+function debug($var)
 {
 	echo '<pre>';
 	print_r($var);
