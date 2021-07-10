@@ -1,5 +1,6 @@
 <?php
 
+namespace vendor\core;
 
 class Router
 {
@@ -46,14 +47,14 @@ class Router
 	}
 
 	/**
-	 * Direct URL to correct Route
+	 * Direct URL to correct Route to controller's action
 	 * @param string $url insert URL
 	 * @return void
 	 */
 	public static function dispatch(string $url)
 	{
 		if (self::matchRoute($url)) {
-			$controller = self::studlyCaps(self::$route['controller']);
+			$controller = "\app\controllers\\" . self::studlyCaps(self::$route['controller']);
 			if ( class_exists($controller) ) {
 				$controllerObject = new $controller;
 				$action = self::camelCase(self::$route['action']) . 'Action';

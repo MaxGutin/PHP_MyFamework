@@ -1,5 +1,6 @@
 <?php
 
+namespace app\controllers;
 
 class Posts
 {
@@ -7,8 +8,8 @@ class Posts
 	{
 		echo 'Posts::index';
 	}
-	public function test()
+	public function testAction()
 	{
-
+		echo 'Posts::test';
 	}
 }
